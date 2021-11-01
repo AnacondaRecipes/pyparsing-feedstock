@@ -26,9 +26,7 @@ requirements:
 test:
   imports:
     - pyparsing
-    - pyparsing.diagram
   requires:
-    - jinja2
     - pip
     - python <3.10
   commands:
