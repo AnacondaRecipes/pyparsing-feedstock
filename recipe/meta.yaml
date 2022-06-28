@@ -11,7 +11,6 @@ source:
 build:
   number: 0
   skip: True  # [py<36]
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,14 +20,13 @@ requirements:
     - setuptools
     - wheel
   run:
-    - python >=3.6
+    - python
 
 test:
   imports:
     - pyparsing
   requires:
     - pip
-    - python <3.10
   commands:
     - pip check
 
@@ -43,7 +41,8 @@ about:
     simple grammars, vs. the traditional lex/yacc approach, or the use of
     regular expressions. The pyparsing module provides a library of classes
     that client code uses to construct the grammar directly in Python code.
-  doc_url: https://github.com/pyparsing/pyparsing/blob/master/docs/HowToUsePyparsing.rst
+  doc_url: https://pyparsing-docs.readthedocs.io/en/latest/
+  doc_source_url: https://github.com/pyparsing/pyparsing/blob/master/docs/HowToUsePyparsing.rst
   dev_url: https://github.com/pyparsing/pyparsing/
 
 extra:
