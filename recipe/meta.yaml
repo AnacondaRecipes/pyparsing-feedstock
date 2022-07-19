@@ -1,4 +1,4 @@
-{% set version = "3.0.4" %}
+{% set version = "3.0.9" %}
 
 package:
   name: pyparsing
@@ -6,12 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pyparsing/pyparsing-{{ version }}.tar.gz
-  sha256: e0df773d7fa2240322daae7805626dfc5f2d5effb34e1a7be2702c99cfb9f6b1
+  sha256: 2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb
 
 build:
   number: 0
-  skip: True  # [py<36]
-  noarch: python
+  skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -20,15 +19,17 @@ requirements:
     - pip
     - setuptools
     - wheel
+    - flit-core >=3.2
+    # flit-core requires tomli
+    - tomli
   run:
-    - python >=3.6
+    - python
 
 test:
   imports:
     - pyparsing
   requires:
     - pip
-    - python <3.10
   commands:
     - pip check
 
