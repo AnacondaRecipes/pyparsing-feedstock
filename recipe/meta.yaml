@@ -19,7 +19,7 @@ requirements:
     - pip
     - setuptools
     - wheel
-    - flit-core >=3.2
+    - flit-core >=3.2,<4
     # flit-core requires tomli
     - tomli
   run:
