@@ -24,12 +24,17 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
+    - examples
   imports:
     - pyparsing
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest -vv . --ignore=tests/test_diagram.py -k "not (TestExamples or Test02_WithoutPackrat or Test04_WithPackrat or Test06_WithBoundedPackrat or Test08_WithUnboundedPackrat or Test09_WithLeftRecursionParsing or Test10_WithLeftRecursionParsingBoundedMemo)"
 
 about:
   home: https://github.com/pyparsing/pyparsing/
