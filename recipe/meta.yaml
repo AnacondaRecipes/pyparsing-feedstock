@@ -30,7 +30,7 @@ test:
   requires:
     - pip
     - pytest
-    - matplotlib
+    - matplotlib-base
   commands:
     - pip check
     - pytest -vv . --ignore=tests/test_diagram.py -k "not (TestExamples or Test02_WithoutPackrat or Test04_WithPackrat or Test06_WithBoundedPackrat or Test08_WithUnboundedPackrat or Test09_WithLeftRecursionParsing or Test10_WithLeftRecursionParsingBoundedMemo)"
