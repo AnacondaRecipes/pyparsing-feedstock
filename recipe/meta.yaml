@@ -1,4 +1,4 @@
-{% set version = "3.2.5" %}
+{% set version = "3.3.2" %}
 
 package:
   name: pyparsing
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pyparsing/pyparsing-{{ version }}.tar.gz
-  sha256: 2df8d5b7b2802ef88e8d016a2eb9c7aeaa923529cd251ed0fe4608275d4105b6
+  sha256: c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc
 
 build:
   number: 0
@@ -17,7 +17,7 @@ requirements:
   host:
     - python
     - pip
-    - flit-core >=3.2,<4
+    - flit-core >=3.12,<4
   run:
     - python
 
