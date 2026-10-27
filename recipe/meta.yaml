@@ -10,7 +10,7 @@ source:
   sha256: 928ae7e20211f3b6f3915a72f06a0cfd29ab9d24279dd6346b6b1a7146397d36
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   skip: true  # [py<39]
 
@@ -31,7 +31,8 @@ test:
   requires:
     - pip
     - pytest
-    - matplotlib-base
+    # matplotlib needs pyparsing, so py3.15 has no matplotlib yet; tests/test_matplotlib_cases.py skips without it
+    - matplotlib-base  # [py<315]
   commands:
     - pip check
     # skip tests that require 'railroad', unavailable
